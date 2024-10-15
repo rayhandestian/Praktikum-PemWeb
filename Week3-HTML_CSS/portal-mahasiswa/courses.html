@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Mahasiswa - Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Portal Mahasiswa</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="courses.html" class="active">Course</a></li>
+                <li><a href="account.html">Account</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h1>Course</h1>
+            <p>Daftar Mata Kuliah Anda:</p>
+            
+            <!-- Tabel Course -->
+            <section class="course-table-section">
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Mata Kuliah</th>
+                            <th>Dosen</th>
+                            <th>Semester</th>
+                            <th>Jadwal</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Data Science</td>
+                            <td>Mr. Dr. Strange</td>
+                            <td>Ganjil 2023/2024</td>
+                            <td>Senin 09.00 - 10.40, Rabu 12.00 - 12.50</td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Software Engineering</td>
+                            <td>Prof. X</td>
+                            <td>Genap 2023/2024</td>
+                            <td>Kamis 11.00 - 11.50</td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Web Programming</td>
+                            <td>Mr. Tim Berners-Lee</td>
+                            <td>Ganjil 2023/2024</td>
+                            <td>Jumat 13.50 - 15.30</td>
+                            <td><button class="view-button">View</button></td>
+                        </tr>
+                        <!-- Bisa tambah rows lagi sesuai kebutuhan -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
