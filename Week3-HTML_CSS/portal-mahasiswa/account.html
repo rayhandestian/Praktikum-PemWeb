@@ -1,1 +1,90 @@
-<!-- to do-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Mahasiswa - Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Portal Mahasiswa</h2>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="courses.html">Course</a></li>
+                <li><a href="account.html" class="active">Account</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <h1>Account</h1>
+            <p>Daftar Akun Anda:</p>
+
+            <!-- Form Account -->
+            <section class="account-form-section">
+                <form class="account-form" action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Kata Sandi:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Tanggal Lahir:</label>
+                        <input type="date" id="dob" name="dob">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Jenis Kelamin:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Laki-laki</label>
+                            
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Perempuan</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hobi:</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="hobi1" name="hobbies" value="membaca">
+                            <label for="hobi1">Membaca</label>
+
+                            <input type="checkbox" id="hobi2" name="hobbies" value="olahraga">
+                            <label for="hobi2">Olahraga</label>
+
+                            <input type="checkbox" id="hobi3" name="hobbies" value="musik">
+                            <label for="hobi3">Musik</label>
+
+                            <input type="checkbox" id="hobi4" name="hobbies" value="gaming">
+                            <label for="hobi4">Gaming</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prodi">Program Studi:</label>
+                        <select id="prodi" name="prodi">
+                            <option value="teknik_kimia">Teknik Kimia</option>
+                            <option value="ilmu_komputer" selected>Ilmu Komputer</option>
+                            <option value="teknik_mesin">Teknik Mesin</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat:</label>
+                        <textarea id="alamat" name="alamat" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="submit-button">Daftar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
