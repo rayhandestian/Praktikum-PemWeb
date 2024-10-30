@@ -20,3 +20,11 @@ Selanjutnya kita belajar tentang elemen lain dalam HTML, seperti elemen semantik
 
 - Vercel Link Latihan: https://latihan-w3-prakpemweb-rayhandestian.vercel.app/
 - Vercel Link Try CSS: https://portalmahasiswa-rayhandestian.vercel.app/
+
+### Week 4: Flex and Grid, then Tailwind CSS Framework
+
+Pada minggu keempat, kita belajar tentang **Flexbox** dan **CSS Grid** untuk membuat layout yang responsif. Flexbox digunakan untuk tata letak satu dimensi, sedangkan Grid untuk dua dimensi.
+
+Selain itu, somehow, kita mulai menggunakan **Tailwind CSS**, framework CSS yang mempermudah styling tanpa menulis CSS manual.
+
+I don't create any Vercel link for this one because I'm too lazy and there's already a lot of deployments in this repository alone.
