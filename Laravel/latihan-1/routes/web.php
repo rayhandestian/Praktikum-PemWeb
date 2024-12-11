@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\Auth;
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 // Signin Routes
 Route::get('/signin', [UserController::class, 'showSigninForm'])->name('signin.form');
 Route::post('/signin', [UserController::class, 'signin'])->name('signin');
