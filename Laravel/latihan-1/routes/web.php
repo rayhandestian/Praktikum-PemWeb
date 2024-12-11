@@ -2,18 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Middleware\Auth;
+
+Route::get('/profile', function () {
+    // Dummy data
+    $username = 'ryhndes';
+    $email = 'ryhndes2@coolperson.com';
+
+    return view('profile', compact('username', 'email'));
+})->middleware(Auth::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Home Route (Why? I like the welcome page though)
-// Route::get('/', function () {
-//     return 'Welcome (halaman utama)';
-// });
-
 // Signin Routes
 Route::get('/signin', function () {
-    return 'Form Signin';
+    return view('signin');
 });
 
 Route::post('/signin', function () {
@@ -22,7 +27,7 @@ Route::post('/signin', function () {
 
 // Signup Routes
 Route::get('/signup', function () {
-    return 'Form Signup';
+    return view('signup');
 });
 
 Route::post('/signup', function () {
@@ -31,7 +36,7 @@ Route::post('/signup', function () {
 
 // Blog Routes
 Route::get('/blog', function () {
-    return 'Daftar Artikel Blog';
+    return view('blog');
 });
 
 Route::get('/blog/{blogId}', function ($blogId) {
@@ -39,8 +44,8 @@ Route::get('/blog/{blogId}', function ($blogId) {
     $title = request()->query('title', 'Judul Default');
     $content = request()->query('content', 'Konten Default');
 
-    // Kembalikan string gabungan parameter dan query
-    return "Blog ID: {$blogId}, Title: {$title}, Content: {$content}";
+    // Kembalikan view dengan data
+    return view('blog_detail', compact('blogId', 'title', 'content'));
 });
 
 // Category Routes
@@ -57,3 +62,11 @@ Route::get('/author/{username}', function ($username) {
 Route::get('/privacy-policy', function () {
     return 'Halaman Kebijakan Privasi';
 });
+
+// Profile Route
+// Route::get('/profile', function () {
+//     $username = 'ryhndes';
+//     $email = 'ryhndes@coolperson.com';
+    
+//     return view('profile', compact('username', 'email'));
+// });
