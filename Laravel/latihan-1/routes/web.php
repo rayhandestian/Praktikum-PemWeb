@@ -34,8 +34,13 @@ Route::get('/blog', function () {
     return 'Daftar Artikel Blog';
 });
 
-Route::get('/blog/{slug}', function ($slug) {
-    return "Detail Artikel dengan slug: {$slug}";
+Route::get('/blog/{blogId}', function ($blogId) {
+    // Ambil query string 'title' dan 'content' (default jika tidak ada)
+    $title = request()->query('title', 'Judul Default');
+    $content = request()->query('content', 'Konten Default');
+
+    // Kembalikan string gabungan parameter dan query
+    return "Blog ID: {$blogId}, Title: {$title}, Content: {$content}";
 });
 
 // Category Routes
