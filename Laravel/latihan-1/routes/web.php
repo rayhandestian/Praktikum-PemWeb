@@ -1,38 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\Auth;
 
-Route::get('/profile', function () {
-    // Dummy data
-    $username = 'ryhndes';
-    $email = 'ryhndes2@coolperson.com';
-
-    return view('profile', compact('username', 'email'));
-})->middleware(Auth::class);
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Signin Routes
-Route::get('/signin', function () {
-    return view('signin');
-});
+Route::get('/signin', [UserController::class, 'showSigninForm'])->name('signin.form');
+Route::post('/signin', [UserController::class, 'signin'])->name('signin');
 
-Route::post('/signin', function () {
-    return 'Proses Signin';
-});
+// Route 'login' yang mengarah ke /signin
+Route::get('/login', [UserController::class, 'showSigninForm'])->name('login');
+Route::post('/login', [UserController::class, 'signin'])->name('login.submit');
 
 // Signup Routes
-Route::get('/signup', function () {
-    return view('signup');
-});
+Route::get('/signup', [UserController::class, 'showSignupForm'])->name('signup.form');
+Route::post('/signup', [UserController::class, 'signup'])->name('signup');
 
-Route::post('/signup', function () {
-    return 'Proses Signup';
-});
+// Logout Route
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
+// Profile Route dengan Middleware Auth
+Route::get('/profile', [UserController::class, 'profile'])->middleware(Auth::class);
 
 // Blog Routes
 Route::get('/blog', function () {
@@ -62,11 +50,3 @@ Route::get('/author/{username}', function ($username) {
 Route::get('/privacy-policy', function () {
     return 'Halaman Kebijakan Privasi';
 });
-
-// Profile Route
-// Route::get('/profile', function () {
-//     $username = 'ryhndes';
-//     $email = 'ryhndes@coolperson.com';
-    
-//     return view('profile', compact('username', 'email'));
-// });
